@@ -76,7 +76,7 @@ in
           --substituters ""
 
         echo "[NixOS-WSL] Adding channel..."
-        nixos-enter --root "$root" --command 'nix-channel --add https://github.com/nix-community/NixOS-WSL/archive/refs/heads/main.tar.gz nixos-wsl'
+        nixos-enter --root "$root" --command 'HOME=/root nix-channel --add https://github.com/nix-community/NixOS-WSL/archive/refs/heads/main.tar.gz nixos-wsl'
 
         echo "[NixOS-WSL] Adding default config..."
         ${if cfg.configPath == null then ''
